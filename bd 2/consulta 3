@@ -1,0 +1,11 @@
+SELECT ciudad.`detalle` AS CIUDAD, departamento.`nombre_departamento` AS DEPARTAMENTO,
+paises.`detalle` AS PAIS,
+COUNT(sucursales.`id_sucursales` )AS CANTIDA_SUCURSALES
+FROM ciudad
+INNER JOIN departamento
+ON ciudad.`id_departamento`=departamento.`id_departamento`
+INNER JOIN paises
+ON paises.`id_paises`= departamento.`id_paises`
+INNER JOIN sucursales
+ON sucursales.`id_ciudad`=ciudad.`id_ciudad`
+GROUP BY ciudad.`id_ciudad`

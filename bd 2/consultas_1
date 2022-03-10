@@ -1,0 +1,7 @@
+SELECT sucursales.`id_sucursales` AS ID_SUCURSALES,sucursales.`nombre_encargado` AS ENCARGADO,
+CONCAT('(',Nit_cc,')',nombre_cliente) AS NOMBRE_CLIENTE, paises.`detalle` AS PAIS
+FROM sucursales
+INNER JOIN clientes ON sucursales.`id_sucursales`= clientes.`id`
+INNER JOIN ciudad ON sucursales.`id_ciudad`=ciudad.`id_ciudad`
+INNER JOIN departamento ON ciudad.`id_departamento`=departamento.`id_departamento`
+INNER JOIN paises ON departamento.`id_paises`=paises.`id_paises`

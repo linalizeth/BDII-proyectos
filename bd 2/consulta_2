@@ -1,0 +1,6 @@
+SELECT clientes.id AS ID, clientes.`nombre_cliente`AS NOMBRE_CLIENTE, 
+COUNT(sucursales.`id_sucursales`) AS CANTIDAD_SUCURSALES
+FROM sucursales
+INNER JOIN clientes 
+ON sucursales.`id_sucursales`= clientes.`id` 
+GROUP BY clientes.`id`
